@@ -27,15 +27,15 @@ EX: If there are 36 data, you must store this number as follows: var_num = seq(1
 
 The number of bars will be used to determine the value of the angle for the labels. The following code allows you to calculate these angles. 
 Keep in mind that the "data" is the Excel Document/Text Document with the data.
- _____________________________________________________________
-| label_data = data                                           |
-| number_of_bars=nrow(label_data)                             |
-| angle = 90 - 360 * (num_data-0.5)/number_of_bars            |
-| label_data$hjust <- ifelse(angle < -90, 1, 0)               |
-| label_data$angle <- ifelse(angle < -90, angle+180, angle)   |
-| label_data$hjust2 <- ifelse(angle > 90, 2, 0)               |
-| label_data$angle2 <- ifelse(angle < -90, angle+180, angle)  |
-|_____________________________________________________________|
+
+ 'label_data = data                                           
+ number_of_bars=nrow(label_data)                            
+ angle = 90 - 360 * (num_data-0.5)/number_of_bars          
+ label_data$hjust <- ifelse(angle < -90, 1, 0)               
+ label_data$angle <- ifelse(angle < -90, angle+180, angle)   
+ label_data$hjust2 <- ifelse(angle > 90, 2, 0)               
+ label_data$angle2 <- ifelse(angle < -90, angle+180, angle)'  
+
 
 
 We add geom_hline 3 times to create the cocentric circles around the graph, where the labels for the value will be placed.
